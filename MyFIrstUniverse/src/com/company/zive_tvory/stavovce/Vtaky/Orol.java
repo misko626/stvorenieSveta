@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Orol extends Vtak{
 
-    public Orol(int pocet_stavcov) {
-        super(pocet_stavcov);
+    public Orol(String meno, int pocet_stavcov) {
+        super(meno,pocet_stavcov);
     }
 
     @Override

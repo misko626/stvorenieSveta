@@ -20,8 +20,8 @@ public abstract class Vtak extends Stavovec {
 //
 //    }
 
-    public Vtak( int pocet_stavcov){
-        super(pocet_stavcov);
+    public Vtak( String meno, int pocet_stavcov){
+        super(meno, pocet_stavcov);
     }
 
     public void vyliahniSa(){

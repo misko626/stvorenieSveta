@@ -2,14 +2,18 @@ package com.company.vesmirneTelesa;
 
 import com.company.zive_tvory.Tvor;
 
+import java.util.LinkedList;
+
 public class Zem extends Planeta{
 
-    private Tvor[] poleTvorov;
+    private Tvor[] poleTvoro;
+
+    private LinkedList<Tvor> poleTvorov = new LinkedList<Tvor>();
+
     private int pocetTvorov;
 
     public Zem(String meno, double vaha, double priemer) {
         super(meno, vaha, priemer);
-        poleTvorov = new Tvor[9];
         pocetTvorov = 0;
     }
 
@@ -22,37 +26,23 @@ public class Zem extends Planeta{
 
 
     public void addTvora(Tvor tvorTvorov){
-        this.poleTvorov[pocetTvorov] = tvorTvorov;
-        pocetTvorov++;
+        this.poleTvorov.add(tvorTvorov);
     }
 
     public void deleteTvora(Tvor tvorTvorov){
         int i = 0;
-        for (Tvor tvor :
-                this.poleTvorov) {
-
-            if (tvor!= null && tvor.equals(tvorTvorov)) {
-                System.out.println("nasiel som tvora na mieste "+i);
-                tvor = null;
-                poleTvorov[i]= null;
-            }
-            i++;
-            }
-    }
-    
-    public void poleTvorovToString(){
-        for (int i = 0; i < poleTvorov.length; i++) {
-            System.out.println(poleTvorov[i]);
+        if (this.poleTvorov.contains(tvorTvorov)){
+            System.out.println("Na zemi som nasiel tohto tvora a vymazal som ho");
+            this.poleTvorov.remove(tvorTvorov);
+        }else{
+            System.out.println("Zatial na zemi takeho tvora nemame");
         }
     }
 
-    public Tvor[] getPoleTvorov() {
-        return poleTvorov;
+    public void printPoleTvorov(){
+        this.poleTvorov.stream().forEach(System.out::println);
     }
 
-    public void setPoleTvorov(Tvor[] poleTvorov) {
-        this.poleTvorov = poleTvorov;
-    }
 
     public int getPocetTvorov() {
         return pocetTvorov;
@@ -60,5 +50,13 @@ public class Zem extends Planeta{
 
     public void setPocetTvorov(int pocetTvorov) {
         this.pocetTvorov = pocetTvorov;
+    }
+
+    public LinkedList<Tvor> getPoleTvorov() {
+        return poleTvorov;
+    }
+
+    public void setPoleTvorov(LinkedList<Tvor> poleTvorov) {
+        this.poleTvorov = poleTvorov;
     }
 }

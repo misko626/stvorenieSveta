@@ -5,11 +5,12 @@ import java.util.Date;
 public class Mucha extends Hmyz{
 
 
-    public Mucha(double velkost, double druh, double farba) {
-        super(velkost, druh, farba);
+    public Mucha(String meno, double velkost, double druh, double farba) {
+        super(meno,velkost, druh, farba);
     }
 
-    public Mucha() {
+    public Mucha(String meno) {
+        super(meno);
     }
 
     @Override

@@ -13,8 +13,8 @@ public class Clovek extends Cicavec {
     protected Clovek mama;
     protected List<Clovek> deti;
 
-    public Clovek(Clovek otec, Clovek mama, int pocet_stavcov) {
-        super(pocet_stavcov);
+    public Clovek(String name, Clovek otec, Clovek mama, int pocet_stavcov) {
+        super(name, pocet_stavcov);
         this.otec = otec;
         this.mama= mama;
         this.deti = new List<Clovek>() {

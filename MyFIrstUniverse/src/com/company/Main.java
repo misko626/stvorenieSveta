@@ -1,6 +1,8 @@
 package com.company;
 
 import com.company.space.Space;
+import com.company.tools.EarthLivingBeingsExtractor;
+import com.company.tools.MessageReader;
 import com.company.vesmirneTelesa.Galaxia;
 import com.company.vesmirneTelesa.Hviezda;
 import com.company.vesmirneTelesa.Slnecna_sustava;
@@ -65,12 +67,13 @@ public class Main {
         //pokracuj vytvorenim kapra
 
         //vytvaranie zvierat
-        Kapor vianocnyKapor = new Kapor(50);
+        Kapor vianocnyKapor = new Kapor("vianocnyKapor",50);
         Date dNow = new Date();
         vianocnyKapor.born(dNow);
-        Nemo nemo = new Nemo(30);
-        Orol orolOrlikovsky = new Orol(30);
-        Mucha vinnaMuska = new Mucha();
+        Nemo nemo = new Nemo("nemo",30);
+        Orol orolOrlikovsky = new Orol("orolOrlikovsky",30);
+        Mucha vinnaMuska = new Mucha("vinnaMuska");
+        Kapor druhyKapor = new Kapor("druhy kapor",33);
 
         //pridanie zvierat na nasu maticku zem
         MatickaZem.addTvora(vianocnyKapor);
@@ -102,31 +105,55 @@ public class Main {
 //        }
 
 //        MatickaZem.poleTvorovToString();
+
+
         MatickaZem.deleteTvora(vianocnyKapor);
         vianocnyKapor = null;
 
 
         //tvorenie ludi, prvy clovek
 
-        Muz prvyMuz = new Muz(null, null, 34, "Adam", "Prvy");
-        Zena prvaZena = new Zena(null, null,34, "Eva", "Prva");
+        Muz prvyMuz = new Muz("prvyMuz", null, null, 34, "Adam", "Prvy");
+        Zena prvaZena = new Zena("prvaZena", null, null,34, "Eva", "Prva");
 
         System.out.println(prvyMuz);
         System.out.println(prvaZena);
 
         //rodenie prvych deti
 
-        Clovek prveDieta = prvaZena.splodit(prvyMuz);
+        Clovek prveDieta = prvaZena.splodit("prveDieta", prvyMuz);
         prveDieta.born(dNow);
         prveDieta.setMeno("Kain");
 
-        Clovek druheDieta = prvaZena.splodit(prvyMuz);
+        Clovek druheDieta = prvaZena.splodit("druheDieta", prvyMuz);
         druheDieta.born(dNow);
         druheDieta.setMeno("Abel");
 
         System.out.println(prveDieta);
         System.out.println(druheDieta);
 
+
+
+
+
+
+        MatickaZem.addTvora(prvaZena);
+        MatickaZem.addTvora(prvyMuz);
+        MatickaZem.addTvora(prveDieta);
+        MatickaZem.addTvora(druheDieta);
+
+        System.out.println("--------------------POLE TVOROV----------------------");
+        MatickaZem.printPoleTvorov();
+
+
+        System.out.println("--------------------TOOLS----------------------");
+        EarthLivingBeingsExtractor elbe = new EarthLivingBeingsExtractor();
+        elbe.getBeingsOnEarth(MatickaZem.getPoleTvorov());
+
+        MessageReader adamonReader = new MessageReader();
+        adamonReader.obtainFilename(args);
+        adamonReader.openAndRead();
+        adamonReader.processMessage();
 
 
     }

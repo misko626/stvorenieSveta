@@ -1,30 +1,28 @@
 package com.company.vesmirneTelesa;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Slnecna_sustava {
 
     Hviezda slnko;
     private int object_counter;
 
-    private Vesmirne_teleso[] obezne_telesa = new Vesmirne_teleso[500000000];
+
+    private Set<Vesmirne_teleso> obezne_selesa = new HashSet<>();
 
 
     public Slnecna_sustava() {
         this.slnko = new Hviezda();
-        setObject_counter(0);
-        obezne_telesa[object_counter] = new Planeta("Mars",432432,432432);
-        object_counter++;
-        obezne_telesa[object_counter] = new Planeta("Venusa",432432,432432);
-        object_counter++;
-        obezne_telesa[object_counter] = new Hviezda("Polarka");
-        object_counter++;
-        obezne_telesa[object_counter] = new Kometa("kometeus", 3452, 1456);
-        object_counter++;
+        this.obezne_selesa.add(new Planeta("Mars",432432,432432));
+        this.obezne_selesa.add(new Planeta("Venusa",432432,432432));
+        this.obezne_selesa.add(new Hviezda("Polarka"));
+        this.obezne_selesa.add(new Kometa("kometeus",3452, 1456));
 
     }
 
     public void addTeleso(Vesmirne_teleso nove_teleso){
-        this.obezne_telesa[object_counter] = nove_teleso;
-        object_counter++;
+        this.obezne_selesa.add(nove_teleso);
     }
 
     public int getObject_counter() {

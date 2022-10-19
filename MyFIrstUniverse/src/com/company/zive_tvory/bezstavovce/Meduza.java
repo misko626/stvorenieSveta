@@ -8,14 +8,11 @@ public abstract class Meduza extends Tvor {
     private boolean prisvitnost;
     private int vek;
 
-    public Meduza(String farba, boolean prisvitnost, int vek) {
+    public Meduza(String konkretnyTvorName, String farba, boolean prisvitnost, int vek) {
+        super(konkretnyTvorName);
         Farba = farba;
         this.prisvitnost = prisvitnost;
         this.vek = vek;
-    }
-
-    public Meduza() {
-
     }
 
     public String getFarba() {

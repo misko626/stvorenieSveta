@@ -9,8 +9,8 @@ public abstract class Ryba extends Stavovec {
     private String druh_vody;
     private boolean vyliahnuty;
 
-    public Ryba(int pocet_stavcov) {
-        super(pocet_stavcov);
+    public Ryba(String meno, int pocet_stavcov) {
+        super(meno, pocet_stavcov);
     }
 
 //    public Ryba(String farba, double vaha, String druh_vody ) {
@@ -25,8 +25,8 @@ public abstract class Ryba extends Stavovec {
 //    }
 
 
-    public Ryba(int pocet_stavcov, String farba, double vaha, String druh_vody, boolean vyliahnuty) {
-        super(pocet_stavcov);
+    public Ryba(String meno, int pocet_stavcov, String farba, double vaha, String druh_vody, boolean vyliahnuty) {
+        super(meno, pocet_stavcov);
         this.farba = farba;
         this.vaha = vaha;
         this.druh_vody = druh_vody;

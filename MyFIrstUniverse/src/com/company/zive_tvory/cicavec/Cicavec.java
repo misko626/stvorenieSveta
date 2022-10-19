@@ -8,8 +8,8 @@ public abstract class Cicavec extends Stavovec implements cicable{
 
     private double temperature;
 
-    public Cicavec(int pocet_stavcov) {
-        super(pocet_stavcov);
+    public Cicavec(String name, int pocet_stavcov) {
+        super(name, pocet_stavcov);
         this.temperature = 36;
     }
 

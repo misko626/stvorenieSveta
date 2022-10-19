@@ -7,13 +7,13 @@ import com.company.zive_tvory.stavovce.stavovce_diely.sustavy.RozmnozovaciaClove
 import java.util.Random;
 
 public class Zena extends Clovek{
-    public Zena(Clovek otec, Clovek mama, int pocet_stavcov) {
-        super(otec, mama, pocet_stavcov);
+    public Zena(String name, Clovek otec, Clovek mama, int pocet_stavcov) {
+        super(name, otec, mama, pocet_stavcov);
     }
 
     //Stvoritelsky konstruktor
-    public Zena(Clovek otec, Clovek mama, int pocet_stavcov, String meno, String priezvisko) {
-        super(otec, mama, pocet_stavcov);
+    public Zena(String name, Clovek otec, Clovek mama, int pocet_stavcov, String meno, String priezvisko) {
+        super(name, otec, mama, pocet_stavcov);
 
         super.meno = meno;
         super.priezvisko = priezvisko;
@@ -24,17 +24,17 @@ public class Zena extends Clovek{
 
     }
 
-    public Clovek splodit(Muz sTymtoMuzom){
+    public Clovek splodit(String meno, Muz sTymtoMuzom){
         Random rand = new Random();
         Boolean man = rand.nextBoolean();
 
         Clovek clovieciSplodeny;
         if(man){
-            clovieciSplodeny = new Muz(sTymtoMuzom, this, 34);
+            clovieciSplodeny = new Muz(meno, sTymtoMuzom, this, 34);
             super.deti.add(clovieciSplodeny);
             sTymtoMuzom.deti.add(clovieciSplodeny);
         }else{
-            clovieciSplodeny = new Zena(sTymtoMuzom, this, 34);
+            clovieciSplodeny = new Zena(meno, sTymtoMuzom, this, 34);
             super.deti.add(clovieciSplodeny);
             sTymtoMuzom.deti.add(clovieciSplodeny);
         }

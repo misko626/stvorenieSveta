@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Kapor extends Ryba{
 
-    public Kapor(int pocet_stavcov) {
-        super(pocet_stavcov);
+    public Kapor(String meno, int pocet_stavcov) {
+        super(meno, pocet_stavcov);
     }
 
 

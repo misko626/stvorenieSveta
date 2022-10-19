@@ -7,13 +7,10 @@ public abstract class KorytnackaMorska extends Tvor {
     private int vek;
     private int pocetPancierov;
 
-    public KorytnackaMorska(int vek, int pocetPancierov) {
+    public KorytnackaMorska(String konkretnyTvorName, int vek, int pocetPancierov) {
+        super(konkretnyTvorName);
         this.vek = vek;
         this.pocetPancierov = pocetPancierov;
-    }
-
-    public KorytnackaMorska(){
-
     }
 
     public int getVek() {

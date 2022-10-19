@@ -6,13 +6,13 @@ import com.company.zive_tvory.stavovce.stavovce_diely.sustavy.RozmnozovaciaClove
 import com.company.zive_tvory.stavovce.stavovce_diely.sustavy.RozmnozovaciaClovek.RozmnozovaciaSustavaZena;
 
 public class Muz extends Clovek{
-    public Muz(Clovek otec, Clovek mama, int pocet_stavcov) {
-        super(otec, mama, pocet_stavcov);
+    public Muz(String name, Clovek otec, Clovek mama, int pocet_stavcov) {
+        super(name, otec, mama, pocet_stavcov);
     }
 
     //Stvoritelsky konstruktor
-    public Muz(Clovek otec, Clovek mama, int pocet_stavcov, String meno, String priezvisko) {
-        super(otec, mama, pocet_stavcov);
+    public Muz(String name, Clovek otec, Clovek mama, int pocet_stavcov, String meno, String priezvisko) {
+        super(name, otec, mama, pocet_stavcov);
 
         super.meno = meno;
         super.priezvisko = priezvisko;

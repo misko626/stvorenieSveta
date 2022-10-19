@@ -8,13 +8,15 @@ public abstract class Hmyz extends Bezstavovec {
     private double druh;
     private double farba;
 
-    public Hmyz(double velkost, double druh, double farba) {
+    public Hmyz(String meno, double velkost, double druh, double farba) {
+        super(meno);
         this.velkost = velkost;
         this.druh = druh;
         this.farba = farba;
     }
 
-    public Hmyz() {
+    public Hmyz(String meno) {
+        super(meno);
 
     }
 }

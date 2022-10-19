@@ -4,9 +4,10 @@ import java.util.Date;
 
 public class Nemo extends Ryba{
 
-    public Nemo(int pocet_stavcov) {
-        super(pocet_stavcov);
+    public Nemo(String meno, int pocet_stavcov) {
+        super(meno, pocet_stavcov);
     }
+
 
     @Override
     public void born(Date date_of_birth) {

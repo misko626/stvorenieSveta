@@ -9,7 +9,8 @@ public abstract class Stavovec extends Tvor {
     protected Chrbtica chrbtica;
     protected Sustava[] sustavy;
 
-    public Stavovec(int pocet_stavcov){
+    public Stavovec(String meno, int pocet_stavcov){
+        super(meno);
         this.chrbtica = new Chrbtica(pocet_stavcov);
         create_sustavy();
     }
