@@ -3,10 +3,7 @@ package com.company;
 import com.company.space.Space;
 import com.company.tools.EarthLivingBeingsExtractor;
 import com.company.tools.MessageReader;
-import com.company.vesmirneTelesa.Galaxia;
-import com.company.vesmirneTelesa.Hviezda;
-import com.company.vesmirneTelesa.Slnecna_sustava;
-import com.company.vesmirneTelesa.Zem;
+import com.company.vesmirneTelesa.*;
 import com.company.zive_tvory.bezstavovce.Hmyz.Mucha;
 import com.company.zive_tvory.clovecina.Clovek;
 import com.company.zive_tvory.clovecina.Muz;
@@ -56,13 +53,29 @@ public class Main {
 //        Planeta Neptun = new Planeta();
 //        Planeta Pluto = new Planeta();
 
+        //----------------------------------DOMACA ULOHA 1 ZA BODY ------------------------------
+
         Slnecna_sustava slnecna_sustava = new Slnecna_sustava();
         slnecna_sustava.addTeleso(MatickaZem);
 
         //vytvorenie Galaxie a pridanie Slnecnej sustavy do pola vesmirnych sustav
 
-        Galaxia Mliecna_draha = new Galaxia();
-        Mliecna_draha.addSustava(slnecna_sustava);
+        Galaxia Mliecna_cesta = new Galaxia();
+        Mliecna_cesta.addSustava(slnecna_sustava);
+
+        Galaxia Popovic = new Galaxia();
+        Popovic.sendMessageToGalaxy("Ahoj ja som Galaxia Popovic a posielam spravu do galaxie Mliecna_cesta", Mliecna_cesta);
+
+        //Vytvorenie sustavy ciernych dier
+        Sustava_ciernych_dier Sustava_cierneDiery = new Sustava_ciernych_dier();
+        Sustava_cierneDiery.vcucniSustavu(Mliecna_cesta, slnecna_sustava);
+
+
+        //odchytenie spravy z galaxie Popovic do galaxie Mliecna_cesta (men in the middle) :D :D
+        System.out.println(Mliecna_cesta.getSpravaZGalaxie());
+
+        //----------------------------------DOMACA ULOHA KONIEC ------------------------------
+
 
         //pokracuj vytvorenim kapra
 

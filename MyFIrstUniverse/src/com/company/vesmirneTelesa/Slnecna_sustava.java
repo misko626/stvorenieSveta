@@ -3,7 +3,7 @@ package com.company.vesmirneTelesa;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Slnecna_sustava {
+public class Slnecna_sustava extends Planetarna_sustava {
 
     Hviezda slnko;
     private int object_counter;
