@@ -68,6 +68,7 @@ public class Main {
 
         //Vytvorenie sustavy ciernych dier
         Sustava_ciernych_dier Sustava_cierneDiery = new Sustava_ciernych_dier();
+        Mliecna_cesta.addSustava(Sustava_cierneDiery);
         Sustava_cierneDiery.vcucniSustavu(Mliecna_cesta, slnecna_sustava);
 
 

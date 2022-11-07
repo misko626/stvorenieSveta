@@ -3,7 +3,7 @@ package com.company.vesmirneTelesa;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Sustava_ciernych_dier {
+public class Sustava_ciernych_dier extends Planetarna_sustava {
 
     private int pocet_ciernych_dier;
     private int pocet_vcucnutych_sustav;
